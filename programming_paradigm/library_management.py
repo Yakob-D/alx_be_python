@@ -19,7 +19,7 @@ class Book:
 
 class Library:
     def __init__(self):
-        self.__books = []  # Start with an empty book list
+        self.__books = []  # Private list to store books
 
     def add_book(self, book):
         self.__books.append(book)
@@ -47,29 +47,3 @@ class Library:
         else:
             for book in available_books:
                 print(book)
-
-
-# Testing
-def main():
-    # Setup a small library
-    library = Library()
-    library.add_book(Book("Brave New World", "Aldous Huxley"))
-    library.add_book(Book("1984", "George Orwell"))
-
-    # Initial list of available books
-    print("Available books after setup:")
-    library.list_available_books()
-
-    # Simulate checking out a book
-    library.check_out_book("1984")
-    print("\nAvailable books after checking out '1984':")
-    library.list_available_books()
-
-    # Simulate returning a book
-    library.return_book("1984")
-    print("\nAvailable books after returning '1984':")
-    library.list_available_books()
-
-
-if __name__ == "__main__":
-    main()
