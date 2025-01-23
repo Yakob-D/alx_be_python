@@ -1,29 +1,21 @@
-import math
-
-
-class Shape:
-    def area(self):
-        raise NotImplementedError
-class Rectangle(Shape):
-    def __init__(self, length, width):
-        self.length = length
-        self.width = width
-    def area(self):
-        return self.length * self.width
-class Circle(Shape):
-    def __init__(self, radius):
-        self.radius = radius
-    def area(self):
-        return math.pi * self.radius ** 2
+class Calculator:
+    calculation_type = "Arithmetic Operations"
+    @staticmethod
+    def add(a, b):
+        return a + b
+    @classmethod
+    def multiply(cls ,a, b):
+        print(f"Calculation type: {cls.calculation_type}")
+        return a * b
 
 def main():
-    shapes = [
-        Rectangle(10, 5),
-        Circle(7)
-    ]
+    # Using the static method
+    sum_result = Calculator.add(10, 5)
+    print(f"The sum is: {sum_result}")
 
-    for shape in shapes:
-        print(f"The area of the {shape.__class__.__name__} is: {shape.area()}")
+    # Using the class method
+    product_result = Calculator.multiply(10, 5)
+    print(f"The product is: {product_result}")
 
 if __name__ == "__main__":
     main()
