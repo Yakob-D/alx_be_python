@@ -23,8 +23,9 @@ class PrintBook(Book):
         return f"PrintBook: {self.title} by {self.author}, Page Count: {self.page_count}"
 
 class Library:
-    def __init__(self, books=None):
-        self.books = books if books else []
+    def __init__(self):
+        # Explicitly initialize books as an empty list
+        self.books = []
 
     def add_book(self, book):
         self.books.append(book)
@@ -32,7 +33,6 @@ class Library:
     def list_books(self):
         for book in self.books:
             print(book)
-
 
 def main():
     # Create a Library instance
